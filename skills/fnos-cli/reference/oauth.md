@@ -5,26 +5,36 @@
 - `client_id`: `YJNMPJUGA9`
 - `scope`: `trim.user.all trim.file.read trim.file.write trim.download.all trim.appcenter.all trim.photo.all trim.system.all trim.log.all trim.storage.all trim.docker.all`；产品专属 scope 见对应 reference
 - `code_challenge_method`: `S256`
-- device name/model: `trim-cli` / `CLI`
+- `device_model`: `CLI`；设备名称规则见下文。
 - 授权 code 有效期：5 分钟
 
 ## 登录
 
 ```bash
-fnos-cli --profile home --host <host> --port <port> login --authorize-only
+fnos-cli --profile home --host <host> --port <port> login --authorize-only --agent-name '<agent>'
 fnos-cli --profile home --host <host> --port <port> login --code '<code>'
 ```
 
 Agent 默认使用两段式授权，用户不必运行终端：
 
 1. 确认用户指定的 NAS 和 profile；已有有效 session 时直接复用。新目标未知时先询问。
-2. Agent 执行 `login --authorize-only`，把返回的 `authorization_url` 原样作为链接发给用户。
+2. Agent 按下述规则提供自身名称，执行 `login --authorize-only --agent-name '<agent 名>'`，把返回的 `authorization_url` 原样作为链接发给用户。
    `authorization_pending=true` 仅代表等待授权，不是已登录；此命令不等待终端输入。
 3. 用户自行打开链接、输入账号密码、确认授权，并把页面显示的一次性 code 发回当前 Agent。
 4. Agent 收到用户明确提供的 code 后，用同一执行主机、系统用户、配置目录、profile 和连接参数
    执行 `login --code '<code>'`。code 作为独立参数传递；使用 shell 时正确引用，不拼接为 shell 语法。
 5. 确认 `token_persisted=true`、`refresh_token_persisted=true`，再用同一 profile 执行
    `system info` 等只读请求，成功后才报告已连接并继续用户任务。
+
+### 授权设备名称
+
+首次发起授权时，Agent 只需通过 `--agent-name` 传入当前工具的简短名称，例如 Codex 用 `codex`、Claude 用 `claude`。名称为 1–32 个 ASCII 字母、数字或连字符，首字符须为字母或数字；CLI 自动转为小写。无法确认 Agent 身份时，先向用户确认名称。
+
+CLI 在 macOS、Linux 和 Windows 上通过系统接口读取实际执行环境的主机名，保留其大小写，拼成 `{本机名}-{agent 名}`，例如 `macbook-codex`。无需 Agent 读取或猜测主机名，也不依赖 shell 命令或主机名环境变量。SSH/容器中使用该执行环境的主机名。本机名最多保留前 20 个字符（Unicode 标量值，非字节），Agent 后缀完整保留；例如 `abcdefghijklmnopqrstuv` 与 `codex` 组合为 `abcdefghijklmnopqrst-codex`。
+
+名称会展示在 NAS 授权管理中，并保存在当前 profile 的待授权记录；`login --code` 自动复用，无需再次提供名称。`--agent-name` 不能与 `--device-name`、`--code` 或 `--refresh` 同用。系统主机名读取失败时，可由用户指定完整的 `--device-name`（非空、无控制字符、输入最多 128 UTF-8 字节；CLI 去除首尾空白）。手动登录省略两种参数时默认为 `fnos-cli`；新名称用于本次授权，不主动重命名历史授权。
+
+### 授权注意事项
 
 Agent 不代填账号密码、不自动点击授权、不读取浏览器页面 code；仅处理用户主动发来的 code。
 code 会经过聊天和工具调用记录，也可能在本机进程参数中可见；它是敏感的一次性凭据，不能承诺

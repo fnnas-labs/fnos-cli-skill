@@ -21,12 +21,12 @@ Windows 可在 PowerShell 5.1 或 7 中调用 `scripts/fnos-cli.ps1`；`.cmd` �
 
 登录、profile、连接失败及授权恢复先读[连接入口](entries/trim-shared.md)和 [OAuth 指南](reference/oauth.md)。字段约定见[公共约定](reference/_conventions.md)，模块使用方式见[索引](reference/_index.md)。
 
-1. Agent 在用户指定的目标和 profile 执行 `login --authorize-only`，把返回链接交给用户。
+1. Agent 在用户指定的目标和 profile 执行 `login --authorize-only --agent-name '<agent 名>'`（Codex 用 `codex`），CLI 自动生成 `{本机名}-{agent 名}`；把返回链接交给用户。
 2. 用户自行在浏览器登录并授权，把一次性 code 主动发回。用户无需运行终端。
 3. Agent 在同一执行主机、系统用户、配置环境、profile 和连接参数下执行 `login --code`。确认令牌已保存并执行只读验证后才报告连接成功。
 
 ```bash
-fnos-cli --profile home --host <host> --port <port> login --authorize-only
+fnos-cli --profile home --host <host> --port <port> login --authorize-only --agent-name '<agent>'
 fnos-cli --profile home --host <host> --port <port> login --code '<code>'
 fnos-cli --profile home system info
 ```
