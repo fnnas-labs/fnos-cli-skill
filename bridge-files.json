@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.5.1",
+  "version": "0.6.0",
   "files": [
     {
       "path": ".gitignore",
@@ -24,7 +24,7 @@
     },
     {
       "path": "package.json",
-      "sha256": "7ac13aae7a79c66e28f8ab6260122df22c6c998e0535e2ea077704b187f69c14"
+      "sha256": "ea110c05a135fa44f3626270da63fa9c98b44557c1e8d4ec127f1d4af103c55e"
     },
     {
       "path": "README.md",
@@ -124,7 +124,7 @@
     },
     {
       "path": "skills/fnos-cli/reference/oauth.md",
-      "sha256": "a6372414fe5cbea164b75d5ef3249f46600dc6ef10f452eed6ce5a02db9776e5"
+      "sha256": "ceb1c0b4d8bc8af5ccdacabbc2563229131dad95a41e8c90e5b6d7a28e89cff7"
     },
     {
       "path": "skills/fnos-cli/reference/photos.md",
@@ -172,7 +172,7 @@
     },
     {
       "path": "skills/fnos-cli/runtime-manifest.json",
-      "sha256": "9848c6368879090da2f57ead7c829c9e3b7d041e51d88218b6c68d22425329cf"
+      "sha256": "84785160be2e878a4f127e7dc705e8b867c199f7f0720d1f9256ac0143284a04"
     },
     {
       "path": "skills/fnos-cli/runtime-setup.md",
@@ -180,7 +180,7 @@
     },
     {
       "path": "skills/fnos-cli/scripts/fnos-cli",
-      "sha256": "764ad2a6e6b8381521ac22a935e072754a40eaa3e5693312984ee0dc56586b62"
+      "sha256": "563f3f3c1ddf6f3adbedc81c6c04270d557e18c357f25577afa2bd5fd20829a3"
     },
     {
       "path": "skills/fnos-cli/scripts/fnos-cli.cmd",
@@ -188,15 +188,15 @@
     },
     {
       "path": "skills/fnos-cli/scripts/fnos-cli.ps1",
-      "sha256": "a579c312a56187eb2c371de4c2f38a9da03493f94b8aa691bc37b17144396cac"
+      "sha256": "271dc726b45d71c341ec6a78f8fe726b0c1827eebacd6387718204a6434d3582"
     },
     {
       "path": "skills/fnos-cli/SKILL.md",
-      "sha256": "8d080f541f082b206b956691726e2780e4e069377d135a9b612b37d5697fa870"
+      "sha256": "23337dd513a0bdada303bb6065af3b1b5fd811af30da3911678ab31d60547f2a"
     },
     {
       "path": "THIRD_PARTY_NOTICES.txt",
-      "sha256": "1b0d288d75ab3e202415d06b1ad2615aec97dd0954d6e669affc9b42bad89b74"
+      "sha256": "f0d2ba1b1ea276ef1dd3e87c978db302aeb4df3dd814c0996babe805c41d4e24"
     }
   ]
 }
