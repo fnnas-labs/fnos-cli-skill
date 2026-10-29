@@ -1,6 +1,6 @@
 {
   "name": "fnos-cli-skill",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "private": true,
   "description": "fnOS Skill and DSH bridge for the latest fnOS CLI package",
   "type": "module",

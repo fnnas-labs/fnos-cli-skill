@@ -9,7 +9,7 @@ Docker 模块申请 `trim.*` scope；完整列表见 `oauth.md`。
 Agent 使用两段式授权，详细边界和故障处理见 `oauth.md`：
 
 ```bash
-fnos-cli --profile home --host <host> --port <port> login --authorize-only
+fnos-cli --profile home --host <host> --port <port> login --authorize-only --agent-name '<agent 名>'
 fnos-cli --profile home --host <host> --port <port> login --code '<code>'
 ```
 
@@ -131,7 +131,7 @@ trusted-device/2FA 登录流程。
 ## 错误处理
 
 - `saved proxy session is required`：先完成 OAuth 登录。
-- OAuth pending 缺失或过期：按 `oauth.md` 重新执行 `login --authorize-only`，等待用户回传新 code 后再交换，不重试旧 code。
+- OAuth pending 缺失或过期：按 `oauth.md` 重新执行 `login --authorize-only --agent-name <agent>`，等待用户回传新 code 后再交换，不重试旧 code。
 - refresh 失败或 refresh token 缺失：重新运行 OAuth 登录，不回退到账号密码。
 - refresh 返回后 session 最终写入失败：不要盲目复用旧 refresh token；它可能已被轮换，应重新登录。
 - 权限错误：先用 `user info` 确认 `admin`，不要自动提升权限。

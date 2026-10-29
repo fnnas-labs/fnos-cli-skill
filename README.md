@@ -18,7 +18,7 @@ Windows 可在 PowerShell 5.1 或 7 中调用 `scripts/fnos-cli.ps1`；`.cmd` �
 
 ## 授权与使用
 
-从 [Skill 主入口](skills/fnos-cli/SKILL.md)开始。Agent 运行 `login --authorize-only` 提供链接，用户自行在浏览器登录并回传一次性 code。Agent 保持目标、profile 与执行环境一致，运行 `login --code` 并验证令牌保存及只读请求。无需用户终端；不要提供密码或 token。详细流程见 [OAuth 指南](skills/fnos-cli/reference/oauth.md)。fnOS 的 DSH 使用同包启动器和 Skill。
+从 [Skill 主入口](skills/fnos-cli/SKILL.md)开始。Agent 运行 `login --authorize-only --agent-name '<agent>'` 提供链接，用户自行在浏览器登录并回传一次性 code。Agent 保持目标、profile 与执行环境一致，运行 `login --code` 并验证令牌保存及只读请求。无需用户终端；不要提供密码或 token。详细流程见 [OAuth 指南](skills/fnos-cli/reference/oauth.md)。fnOS 的 DSH 使用同包启动器和 Skill。
 
 ## 许可
 
@@ -56,15 +56,15 @@ dsh plugin --profile headless add github:fnnas-labs/fnos-cli-skill
 
 ## 首次授权
 
-Agent 使用同一个包内启动器，分别执行：
+Agent 先确定自身的简短名称（Codex 使用 `codex`），使用同一个包内启动器，分别执行。第一条命令必须传入 `--agent-name`；CLI 会自动读取当前 DSH 主机名并生成设备授权名 `{本机名}-{agent 名}`：
 
 ```sh
-node "<resolved-launcher>" --profile <profile> --host <nas-host> --port <port> login --authorize-only
+node "<resolved-launcher>" --profile <profile> --host <nas-host> --port <port> login --authorize-only --agent-name '<agent 名>'
 # 用户打开链接、授权并主动回传一次性 code 后执行：
 node "<resolved-launcher>" --profile <profile> --host <nas-host> --port <port> login --code '<code>'
 ```
 
-使用用户指定的 NAS 与端口；未知时询问，不猜测 localhost。两步及后续请求保持同一连接参数（含 HTTP/TLS）、profile、执行主机、系统用户和配置环境（包括 `FNOS_CLI_CONFIG_DIR`）。用户只在浏览器授权并回传 code，无需终端或交互 DSH TTY。完整过期、pending 和 code 保密规则见包内 `reference/oauth.md`。确认令牌保存并完成只读请求后才报告成功。SSH 和容器需要自己的启动器和状态；macOS Keychain 可能需要系统批准。
+使用用户指定的 NAS 与端口；未知时询问，不猜测 localhost。两步及后续请求保持同一连接参数（含 HTTP/TLS）、profile、执行主机、系统用户和配置环境（包括 `FNOS_CLI_CONFIG_DIR`）。用户只在浏览器授权并回传 code，无需终端或交互 DSH TTY。完整过期、pending、设备名和 code 保密规则见包内 `reference/oauth.md`。确认令牌保存并完成只读请求后才报告成功。SSH 和容器需要自己的启动器和状态；macOS Keychain 可能需要系统批准。
 
 ## 手动集成检查
 

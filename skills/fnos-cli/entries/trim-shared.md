@@ -16,7 +16,7 @@ description: 登录、选择连接目标或 profile、排查登录状态和连�
 - 已支持的 Connect 设备子域名请求自动包含 `mode=relay` Cookie；其他目标不附加。具体设备或连接路径需实际验证。
 - 自签 HTTPS 可能需要显式 `--tls-insecure`；远端明文 HTTP 需要显式 `--allow-insecure-http`。
 - 默认使用平台安全存储。`FNOS_CLI_SESSION_STORAGE=file` 仅适用于隔离测试或 CI。安全存储失败后，显式 `FNOS_CLI_SESSION_STORAGE=ask-file` 会询问是否回落到较低信任的文件存储。
-- OAuth PKCE 由用户在浏览器中处理凭据和 2FA。Agent 分别执行 `login --authorize-only` 与 `login --code`，等待用户主动回传 code，无需用户终端。
+- OAuth PKCE 由用户在浏览器中处理凭据和 2FA。Agent 先传入自身简短名称（如 `codex`），CLI 自动拼接执行环境的主机名作为设备授权名。Agent 分别执行 `login --authorize-only --agent-name '<agent>'` 与 `login --code`，等待用户主动回传 code，无需用户终端。
 - 两步和后续请求保持同一执行主机、系统用户、配置环境、profile 与目标。SSH、容器和远端浏览器不自动共享登录态；macOS 后台 Keychain 访问可能需要系统批准。
 - access token 临近到期会刷新；`login --refresh` 可主动刷新。刷新先检查存储可写性，失败则不发送请求；并发进程复用较新状态，避免覆盖轮换后的 token。
 - token 交换返回的设备访问码保存在受控 session 中，并在受保护请求自动附加所需请求头。不要求用户把设备访问码发到聊天；网关挑战要求重新登录。
@@ -29,7 +29,7 @@ description: 登录、选择连接目标或 profile、排查登录状态和连�
 Agent 分别执行两步登录，中间等待用户 code，保持目标和 profile 一致：
 
 ```bash
-fnos-cli --profile home --host <host> --port <port> login --authorize-only
+fnos-cli --profile home --host <host> --port <port> login --authorize-only --agent-name '<agent>'
 fnos-cli --profile home --host <host> --port <port> login --code '<code>'
 fnos-cli --profile home system info
 ```

@@ -6,7 +6,7 @@ Agent 协助 OAuth 授权、最小探测与写后验证时使用本流程。
 
 按 `../oauth.md` 完成 Agent 协助的 OAuth PKCE：
 
-1. Agent 执行 `fnos-cli --profile <profile> --host <host> --port <port> login --authorize-only`。
+1. Agent 执行 `fnos-cli --profile <profile> --host <host> --port <port> login --authorize-only --agent-name '<agent>'`。
 2. 把返回的授权链接交给用户，等待回复。
 3. 用户在浏览器打开链接、登录并授权。
 4. 用户把一次性 code 发回 Agent，无需打开终端。
