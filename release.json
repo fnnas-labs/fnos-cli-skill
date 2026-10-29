@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "variant": "fnos",
+  "packageName": "@fnnas-labs/fnos-cli",
+  "commandName": "fnos-cli",
+  "repository": "fnnas-labs/fnos-cli-skill",
+  "version": "0.6.0",
+  "tag": "v0.6.0",
+  "sourceCommit": "9920a420e2d8d0e05ca0be3c160b74f69e19a23a",
+  "evidenceSha256": {
+    "candidate.json": "566dcd9d0e55dc36b544be33bc01fe58b2e65c2291c3e1eb51029a5d97d81b0a",
+    "gate.json": "3f472311ff6f5e32c74dd8a2d64e2b47630a2d9e330a8dcdef2d598fbe0a6227",
+    "darwin.json": "6d42bc8d49cf0af5c3a2c64e39d5192ece0e341881770eba57033854d69e2ce2",
+    "linux.json": "952813ce650d6f27ed7163f78371ada4310cc81881c2de4e7e667141a4b11732",
+    "win32.json": "141be245beddbc47dd6a18c6dd94f1b9508f8f335d65567f8f07b47999d0a4ef"
+  },
+  "bridgeManifestSha256": "1a5697b2671f946fc6be54aa01b0228d161fe66ce7a34fe225ed9de77092c3fd",
+  "assets": [
+    {
+      "name": "fnnas-labs-fnos-cli-0.6.0.tgz",
+      "sha256": "67252f879b38791fbff57cc1b4ea671f77d73c41884323e6d19a5f75b5df79d3"
+    },
+    {
+      "name": "fnos-skill.zip",
+      "sha256": "b8c6e498f0e4a87c5109ecf740947e65e86c29c45edfdc0ede0595229c14f175"
+    },
+    {
+      "name": "fnos-cli-0.6.0-darwin-arm64.gz",
+      "sha256": "f508edc6448624bfa6bb17aae03b7e49ece476d5a0ec172019634084b394a703"
+    },
+    {
+      "name": "fnos-cli-0.6.0-darwin-x64.gz",
+      "sha256": "22acdc0c7f36242bd515a22c8daa2db238d80783d6f905a4730423c403e4ab7c"
+    },
+    {
+      "name": "fnos-cli-0.6.0-linux-arm64.gz",
+      "sha256": "31bff98a643371e1196795c963011eb780fcfc3e1c731a70a5aa728ca604c745"
+    },
+    {
+      "name": "fnos-cli-0.6.0-linux-x64.gz",
+      "sha256": "234f3857957c2e548dec38b33e711527d4829d9bd7b8eabe934852faede6f202"
+    },
+    {
+      "name": "fnos-cli-0.6.0-windows-arm64.gz",
+      "sha256": "65f3ec94b8e9e598120d13e2cdb446c8ccd1b1a721d47a925685e013c97dfc1d"
+    },
+    {
+      "name": "fnos-cli-0.6.0-windows-x64.gz",
+      "sha256": "bd392d209fbff2a7af9ba183361b4834d9e42442875cfc99fa4d3441bfe88a51"
+    }
+  ]
+}

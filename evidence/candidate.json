@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "variant": "fnos",
+  "packageName": "@fnnas-labs/fnos-cli",
+  "commandName": "fnos-cli",
+  "skillName": "fnos-cli",
+  "locale": "zh-CN",
+  "repository": "fnnas-labs/fnos-cli-skill",
+  "version": "0.6.0",
+  "sourceCommit": "9920a420e2d8d0e05ca0be3c160b74f69e19a23a",
+  "sourceSha256": "090fb0d7392e42397d8c71279449dabee37039541250464ede49b314534bed79",
+  "sourceTag": "v0.6.0",
+  "mode": "tagged",
+  "publication": "not published; downstream acceptance and publication gates still required",
+  "assets": [
+    {
+      "name": "fnnas-labs-fnos-cli-0.6.0.tgz",
+      "sha256": "67252f879b38791fbff57cc1b4ea671f77d73c41884323e6d19a5f75b5df79d3"
+    },
+    {
+      "name": "fnos-skill.zip",
+      "sha256": "b8c6e498f0e4a87c5109ecf740947e65e86c29c45edfdc0ede0595229c14f175"
+    },
+    {
+      "name": "fnos-cli-0.6.0-darwin-arm64.gz",
+      "sha256": "f508edc6448624bfa6bb17aae03b7e49ece476d5a0ec172019634084b394a703"
+    },
+    {
+      "name": "fnos-cli-0.6.0-darwin-x64.gz",
+      "sha256": "22acdc0c7f36242bd515a22c8daa2db238d80783d6f905a4730423c403e4ab7c"
+    },
+    {
+      "name": "fnos-cli-0.6.0-linux-arm64.gz",
+      "sha256": "31bff98a643371e1196795c963011eb780fcfc3e1c731a70a5aa728ca604c745"
+    },
+    {
+      "name": "fnos-cli-0.6.0-linux-x64.gz",
+      "sha256": "234f3857957c2e548dec38b33e711527d4829d9bd7b8eabe934852faede6f202"
+    },
+    {
+      "name": "fnos-cli-0.6.0-windows-arm64.gz",
+      "sha256": "65f3ec94b8e9e598120d13e2cdb446c8ccd1b1a721d47a925685e013c97dfc1d"
+    },
+    {
+      "name": "fnos-cli-0.6.0-windows-x64.gz",
+      "sha256": "bd392d209fbff2a7af9ba183361b4834d9e42442875cfc99fa4d3441bfe88a51"
+    }
+  ],
+  "publicFiles": [
+    {
+      "name": "LICENSE",
+      "sha256": "5e19aabf43e19a283afe448ebce49453d81693e65b23b87d860f58e109728dfa"
+    },
+    {
+      "name": "README.md",
+      "sha256": "b0b4dbfe9c6d66b3100054996f161c7c67b14feca9ad4ade98656c8943627d2b"
+    },
+    {
+      "name": "THIRD_PARTY_NOTICES.txt",
+      "sha256": "f0d2ba1b1ea276ef1dd3e87c978db302aeb4df3dd814c0996babe805c41d4e24"
+    },
+    {
+      "name": "skills/fnos-cli/LICENSE",
+      "sha256": "5e19aabf43e19a283afe448ebce49453d81693e65b23b87d860f58e109728dfa"
+    },
+    {
+      "name": "skills/fnos-cli/SKILL.md",
+      "sha256": "23337dd513a0bdada303bb6065af3b1b5fd811af30da3911678ab31d60547f2a"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-app.md",
+      "sha256": "e2b094f6b847198006ff2b42f5fa012b6fd9205125c3ffc825b1accdb774a466"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-baidu-netdisk.md",
+      "sha256": "64c85ab144c6409add216e2c33cfca7ba944e3c61abaf5208e92d9636517bb06"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-docker.md",
+      "sha256": "687486f4514f8a33cb4f63b687601c952b22c019bdcabc55e64c9a16a9247b86"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-download.md",
+      "sha256": "7d5f472486c41bd0c765aa68db9b2fdaae458c07593e8b1f28dc606f9ecc4d71"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-file.md",
+      "sha256": "4f28913a072230409e47c5b8f3b2d6e71ccc593dd1e38cbb1b6fb8ef6fdde09a"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-log.md",
+      "sha256": "6565fe19b3bb9138782bef825fbf18c56d2126df8d1386028367c1331c598b99"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-monitor.md",
+      "sha256": "5efa00394bcedd67cef119376963c343f6dc5b8f3817ee9f27b7b5de84e80810"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-network.md",
+      "sha256": "1ba22d75525608fa0cba65dfc9327aed492a6f4d99a41eaad549918362561535"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-photos.md",
+      "sha256": "26993da89b76a026b5d111f57b7ffbe55acbd7a7398efdac623a1269d3a8ef95"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-shared.md",
+      "sha256": "28f7653c393f5a4e93ec5398138b2eeb1efe39e954b364346d1390d5bd1af7b0"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-storage.md",
+      "sha256": "5543148929cd7d0c9b41d29d479ce026fff99ffb30158b424ba74e247c4af3f7"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-system.md",
+      "sha256": "cb62366ce1cd80a07f7888e6db2c8b2753831681bc16e823b0707e397e852b8b"
+    },
+    {
+      "name": "skills/fnos-cli/entries/trim-user.md",
+      "sha256": "4a01c4930417ae936c99909ced17452ac92f62174c3d9290131816fd37939b17"
+    },
+    {
+      "name": "skills/fnos-cli/reference/_conventions.md",
+      "sha256": "e835b944abd969f4fb66b889507abdf8ed6476a6a5ef029a3f076f2e5b8a58fa"
+    },
+    {
+      "name": "skills/fnos-cli/reference/_index.md",
+      "sha256": "da599efad794439b441e068d3a8f55c36bc6ac3876f491f7c02fe5a4980d87f3"
+    },
+    {
+      "name": "skills/fnos-cli/reference/app-center.md",
+      "sha256": "2e8eedc232b1fa21fdc8b172c1a27afc41779d18e57ab097eb8e394b3d39e582"
+    },
+    {
+      "name": "skills/fnos-cli/reference/baidu-netdisk.md",
+      "sha256": "b64a69e5efeb3b790c2ce7e61bf39a63c53819ad2285f35bd7518bd74faae3a6"
+    },
+    {
+      "name": "skills/fnos-cli/reference/dockermgr.md",
+      "sha256": "6c138dd3ba2d044dd683e748e8abb79baa91606e45455634b1f85048eee9bd79"
+    },
+    {
+      "name": "skills/fnos-cli/reference/download.md",
+      "sha256": "c5983ec95c1e2c2f3569e4a1cd3d905c7f866e9a150280b8ab9fd4c63b3674c2"
+    },
+    {
+      "name": "skills/fnos-cli/reference/file.md",
+      "sha256": "a64852948d28403cc1008f5497ba14ecd6f0eebf26d0cb3fef9d77d5b11621e3"
+    },
+    {
+      "name": "skills/fnos-cli/reference/log.md",
+      "sha256": "8634f02c7adfc9ca0218b5681216ef01d64d470c12a2dd4ee8f4c5f1eb19c210"
+    },
+    {
+      "name": "skills/fnos-cli/reference/network.md",
+      "sha256": "3a408edb87081a2326eeb074d29ca3d93e0401c6e0a8e7338418d48abdf27127"
+    },
+    {
+      "name": "skills/fnos-cli/reference/oauth.md",
+      "sha256": "ceb1c0b4d8bc8af5ccdacabbc2563229131dad95a41e8c90e5b6d7a28e89cff7"
+    },
+    {
+      "name": "skills/fnos-cli/reference/photos.md",
+      "sha256": "3aba03ae5451ecc1acc3a86c63d43083d02a0eb1fb393f806983cbefe767883d"
+    },
+    {
+      "name": "skills/fnos-cli/reference/power.md",
+      "sha256": "059c5dbe036ad6d747087f07b9d948327c018309e959d8f4ae59b5432d9699c8"
+    },
+    {
+      "name": "skills/fnos-cli/reference/resmon.md",
+      "sha256": "1907ad0ade7d62cb16b2417d85b39c0fcb337535bb2550c020ced7ade525812f"
+    },
+    {
+      "name": "skills/fnos-cli/reference/stor.md",
+      "sha256": "8ade65cabbee55fd979299c023d74dd8d5fafd74b0a96f1414d43c6a7856dc7e"
+    },
+    {
+      "name": "skills/fnos-cli/reference/sysinfo.md",
+      "sha256": "15388101cfe73dff505eb2ccdb5f7064f83a314229521af6b2ee9ca01c3ab180"
+    },
+    {
+      "name": "skills/fnos-cli/reference/user.md",
+      "sha256": "edd8af6b3543ece277614445c9586926d2d3d70cce343e39561e38786dc11c51"
+    },
+    {
+      "name": "skills/fnos-cli/reference/workflows/device-validation.md",
+      "sha256": "4fc8a70e4f46564f3605618eea364e796c2fd585f3c3f034ec911db0bbf81386"
+    },
+    {
+      "name": "skills/fnos-cli/reference/workflows/file-routing.md",
+      "sha256": "aefc6adf4505eabbcd0df92001d39710ee4e4b0f97ec48274b7f0fcb1e2323bb"
+    },
+    {
+      "name": "skills/fnos-cli/reference/workflows/file-upload-validation.md",
+      "sha256": "e3435a0bc32b8bfbfb41531dc64dcca3abb24c876542cf621e0143686a148278"
+    },
+    {
+      "name": "skills/fnos-cli/reference/workflows/photos-routing.md",
+      "sha256": "455bc6922b43ac99d5837e498c683ac75153d80ccab7858168244494853c9213"
+    },
+    {
+      "name": "skills/fnos-cli/reference/workflows/storage-dangerous-ops.md",
+      "sha256": "144a2de411e3cb88f031dc2a5c15d1c735eb866bdf551cb98db8290e7f6eb66c"
+    },
+    {
+      "name": "skills/fnos-cli/runtime-manifest.json",
+      "sha256": "84785160be2e878a4f127e7dc705e8b867c199f7f0720d1f9256ac0143284a04"
+    },
+    {
+      "name": "skills/fnos-cli/runtime-setup.md",
+      "sha256": "631a4c69e7da2ec85f6f81b98d7eef3b3e9f7103d04cd5ad9805e2eb102d91be"
+    },
+    {
+      "name": "skills/fnos-cli/scripts/fnos-cli",
+      "sha256": "563f3f3c1ddf6f3adbedc81c6c04270d557e18c357f25577afa2bd5fd20829a3"
+    },
+    {
+      "name": "skills/fnos-cli/scripts/fnos-cli.cmd",
+      "sha256": "e83566c363d8502b3abe49f6fc4b0f4611406bcdd1fd2d9ac6e847ef680300fb"
+    },
+    {
+      "name": "skills/fnos-cli/scripts/fnos-cli.ps1",
+      "sha256": "271dc726b45d71c341ec6a78f8fe726b0c1827eebacd6387718204a6434d3582"
+    }
+  ],
+  "reportSha256": "58b58dfae2f57598d5855c92a4b829917b69798932bd56e1b65a23c8d72a45f6"
+}

@@ -1,0 +1,66 @@
+name: Publish CLI
+run-name: ${{ github.repository }} ${{ github.ref_name }} (publish=${{ inputs.publish }})
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the exact validated candidate after product checks
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: npm-release-${{ github.repository }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    # Native assets are already anonymous before entry activation and dispatch.
+    permissions:
+      contents: read
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Download immutable candidate assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --dir artifacts
+      - name: Verify product, source, GitLab evidence and publication phase receipts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/release.cjs verify-ready
+  publish:
+    needs: verify
+    if: inputs.publish
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.repository == 'fnnas-labs/fnos-cli-skill' && 'npm-production' || 'npm-fygo' }}
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --global npm@11
+      - name: Download immutable candidate assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release download "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --dir artifacts
+      - name: Publish and persist npm acceptance
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NPM_CONFIG_PROVENANCE: ${{ github.event.repository.private == false && 'true' || 'false' }}
+        run: node scripts/release.cjs publish
+      - name: Complete GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/release.cjs complete
