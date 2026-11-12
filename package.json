@@ -1,8 +1,9 @@
 {
   "name": "fnos-cli-skill",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": true,
   "description": "fnOS Skill and DSH bridge for the latest fnOS CLI package",
+  "homepage": "https://fnnas.com/",
   "type": "module",
   "main": "index.mjs",
   "license": "MIT",

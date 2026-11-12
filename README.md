@@ -2,6 +2,8 @@
 
 fnOS 的使用指南与公开集成内容。运行时 CLI 与 Skill 来自同一 npm 包版本。
 
+了解飞牛 NAS 与 fnOS，访问 [飞牛官网](https://fnnas.com/)。
+
 ## 安装 Skill
 
 ```bash
